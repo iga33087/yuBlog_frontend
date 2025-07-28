@@ -2,7 +2,7 @@
   <div class="articlePage">
     <div class="container-fluid">
       <div class="row">
-        <div class="articlePageBox col-9">
+        <div class="articlePageBox col-9 pe-5">
           <div class="articlePageTitle">
             <div class="articlePageTitleText">【漫博 25】《WITCHWATCH 魔女守護者》妮可聲優川口莉奈簽名見面會可愛登場</div>
             <div class="articlePageTitleInfo">
@@ -15,12 +15,24 @@
           </div>
         </div>
         <div class="col-3">
-          <div class="articlePageTitle">
-            <div class="articlePageTitleText">作者簡介</div>
-          </div>
-          <AuthorBox />
+          <BorderBox>
+            <template v-slot:title>
+              <div>作者簡介</div>
+            </template>
+            <template v-slot:content>
+              <AuthorBox />
+            </template>
+          </BorderBox>
+          <BorderBox>
+            <template v-slot:title>
+              <div>文章類別</div>
+            </template>
+            <template v-slot:content>
+              
+            </template>
+          </BorderBox>
         </div>
-        <div class="col-12">
+        <div class="col-9">
           <CardBox title="Comment">
             <template v-slot:menu>
               <TagBox>MORE　⭢</TagBox>
@@ -40,16 +52,16 @@
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
               </div>

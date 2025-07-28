@@ -21,16 +21,16 @@
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
-                <div class="col-3">
+                <div class="col-3 px-4">
                   <ArticleBox />
                 </div>
               </div>
