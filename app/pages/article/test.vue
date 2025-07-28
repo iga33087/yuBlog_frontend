@@ -15,7 +15,10 @@
           </div>
         </div>
         <div class="col-3">
-          11111
+          <div class="articlePageTitle">
+            <div class="articlePageTitleText">作者簡介</div>
+          </div>
+          <AuthorBox />
         </div>
         <div class="col-12">
           <CardBox title="Comment">
