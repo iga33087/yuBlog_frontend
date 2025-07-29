@@ -7,7 +7,10 @@
             <div class="articlePageTitleText">【漫博 25】《WITCHWATCH 魔女守護者》妮可聲優川口莉奈簽名見面會可愛登場</div>
             <div class="articlePageTitleInfo">
               <TagBox>TEST</TagBox>
-              <div class="articlePageTitleInfoTime">2025/01/01</div>
+              <div class="d-flex">
+                <div class="articlePageTitleInfoAuthor me-4">Author：TESTUSER01</div>
+                <div class="articlePageTitleInfoTime">Date：2025/01/01</div>
+              </div>
             </div>
           </div>
           <div class="articlePageContent">
