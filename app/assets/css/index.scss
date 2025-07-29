@@ -225,10 +225,18 @@ html,body {
     width: calc(100% - 50px - 1rem);
   }
   .commentBoxInnerUserInfoName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .commentBoxInnerUserInfoNameText {
     font-size: 1.2rem;
     font-weight: bold;
     color:$fontColor3;
     margin-bottom: 0.6rem;
+  }
+  .commentBoxInnerUserInfoNameTime {
+    color:$fontColor2;
   }
   .commentBoxInnerUserInfoComment {
     color:$fontColor3;
