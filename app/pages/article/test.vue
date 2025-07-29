@@ -28,14 +28,16 @@
               <div>文章類別</div>
             </template>
             <template v-slot:content>
-              
+              <div class="p-3">
+                <ClasstypeBox v-for="(item,index) in classtypeData" :key="index" :data="item" :showTotal="true" />
+              </div>
             </template>
           </BorderBox>
         </div>
-        <div class="col-9">
+        <div class="col-9 pe-5">
           <CardBox title="Comment">
             <template v-slot:menu>
-              <TagBox>MORE　⭢</TagBox>
+              <TagBox><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
             <template v-slot:content>
               <CommentBox />
@@ -48,7 +50,7 @@
         <div class="col-12">
           <CardBox title="Articles">
             <template v-slot:menu>
-              <TagBox>MORE　⭢</TagBox>
+              <TagBox><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
             <template v-slot:content>
               <div class="row">
@@ -74,4 +76,16 @@
 </template>
 
 <script setup>
+import {ref,reactive} from 'vue'
+
+const classtypeData=reactive([
+  {title:"Linux",children:[
+    {title:"如何部屬網頁"},
+    {title:"如何實現Docker化"},
+    {title:"如何透過CI/CD實現自動化工作"},
+  ]},
+  {title:"Javascript",children:[]},
+  {title:"Vue",children:[]},
+  {title:"Openwrt",children:[]},
+])
 </script>
