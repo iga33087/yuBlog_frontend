@@ -3,7 +3,7 @@
 $color1:#A7BCBE;
 $color2:#617272;
 $fontColor1:#FFF;
-$fontColor2:#d1e6e6;
+$fontColor2:#6b7a7a;
 $fontColor3:#364646;
 $borderColor1:#364646;
 
@@ -116,6 +116,7 @@ html,body {
   }
   .articleBarBoxTime {
     font-size: 1rem;
+    color:$fontColor2;
   }
   .articleBarBoxTitle {
     font-size: 1.2rem;
@@ -156,7 +157,7 @@ html,body {
   }
   .articleBoxTime {
     font-size: 0.8rem;
-    color:$fontColor3;
+    color:$fontColor2;
     text-align: right;
     font-weight: bold;
   }
@@ -189,8 +190,13 @@ html,body {
     justify-content: space-between;
     margin-bottom: 2rem;
   }
-  .articlePageTitleInfoTime {
-
+  .articlePageTitleInfoList {
+    display: flex;
+    align-items: center;
+    color:$fontColor2;
+  }
+  .articlePageTitleInfoListItem {
+    margin-left: 2rem;
   }
   .articlePageContent {
     color:$fontColor3;
@@ -264,6 +270,7 @@ html,body {
     font-size: 1.6rem;
     border-radius: 100%;
     margin-left: 0.8rem;
+    cursor: pointer;
   }
 }
 
