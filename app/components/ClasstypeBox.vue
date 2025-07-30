@@ -1,18 +1,27 @@
 <template>
-  <div class="classtypeBox">
-    <div class="classtypeBoxTitle" @click="show=!show">
-      <div class="classtypeBoxTitleText">{{data.title}} <span v-if="showTotal">({{data.children&&data.children.length ? data.children.length : 0}})</span></div>
-      <i class="classtypeBoxTitleMenu" :class="{'icon-cheveron-up':showTotal,'classtypeBoxTitleMenuOn':show}" />
-    </div>
-    <div class="classtypeBoxMenu" v-if="data.children&&data.children.length&&show">
-      <ClasstypeBox v-for="(item,index) in data.children" :key="index" :data="item" :showTotal="false" />
-    </div>
-  </div>
+  <BorderBox style="position: sticky;top: 20px;">
+    <template v-slot:title>
+      <div>文章類別</div>
+    </template>
+    <template v-slot:content>
+      <div class="p-3">
+        <ClasstypeBar v-for="(item,index) in data" :key="index" :data="item" :showTotal="true" />
+      </div>
+    </template>
+  </BorderBox>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-const props = defineProps(['data','showTotal'])
-const show=ref(false)
+const { data } = await useAsyncData('getInit2', async () => {
+  let res=[]
+  const articlesData = await $fetch('/api/articles')
+  const classtypesData = await $fetch('/api/classtypes')
+  for(let item of classtypesData.data) {
+    let obj={title:item.title,children:articlesData.data.filter(r=>r.classtype_id===item._id).map(r=> {return {title:r.title}})}
+    res.push(obj)
+  }
+  return res
+})
 
+console.log(2222,data)
 </script>
