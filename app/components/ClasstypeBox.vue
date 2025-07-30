@@ -1,5 +1,5 @@
 <template>
-  <BorderBox style="position: sticky;top: 20px;">
+  <BorderBox class="classtypeBox">
     <template v-slot:title>
       <div>文章類別</div>
     </template>
@@ -12,7 +12,11 @@
 </template>
 
 <script setup>
-const { data } = await useAsyncData('getInit2', async () => {
+
+const data = await $fetch('/api/articles/classtypeBox')
+//const { data } = await useFetch('/api/articles/classtypeBox')
+
+/*const { data } = await useAsyncData('getInit', async () => {
   let res=[]
   const articlesData = await $fetch('/api/articles')
   const classtypesData = await $fetch('/api/classtypes')
@@ -23,5 +27,5 @@ const { data } = await useAsyncData('getInit2', async () => {
   return res
 })
 
-console.log(2222,data)
+console.log(data)*/
 </script>

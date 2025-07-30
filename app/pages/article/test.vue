@@ -40,16 +40,6 @@
             </template>
           </BorderBox>
           <ClasstypeBox />
-          <BorderBox style="position: sticky;top: 20px;">
-            <template v-slot:title>
-              <div>文章類別</div>
-            </template>
-            <template v-slot:content>
-              <div class="p-3">
-                <ClasstypeBar v-for="(item,index) in classtypeData" :key="index" :data="item" :showTotal="true" />
-              </div>
-            </template>
-          </BorderBox>
         </div>
         <div class="col-12">
           <CardBox title="Articles">
