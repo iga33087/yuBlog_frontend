@@ -31,14 +31,7 @@
           </CardBox>
         </div>
         <div class="col-3">
-          <BorderBox>
-            <template v-slot:title>
-              <div>作者簡介</div>
-            </template>
-            <template v-slot:content>
-              <AuthorBox />
-            </template>
-          </BorderBox>
+          <AuthorBox />
           <ClasstypeBox />
         </div>
         <div class="col-12">

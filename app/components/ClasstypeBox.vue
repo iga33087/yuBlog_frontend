@@ -13,8 +13,8 @@
 
 <script setup>
 
-const data = await $fetch('/api/articles/classtypeBox')
-//const { data } = await useFetch('/api/articles/classtypeBox')
+//const data = await $fetch('/api/articles/classtypeBox')
+const { data } = await useFetch('/api/articles/classtypeBox')
 
 /*const { data } = await useAsyncData('getInit', async () => {
   let res=[]
