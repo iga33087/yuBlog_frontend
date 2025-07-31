@@ -6,6 +6,7 @@ $fontColor1:#FFF;
 $fontColor2:#6b7a7a;
 $fontColor3:#364646;
 $borderColor1:#364646;
+$borderColor2:#3646465d;
 
 $xs: 575.98px;
 $sm: 767px;
@@ -17,6 +18,30 @@ $xl: 1920px;
   @media (max-width: $breakpoint) {
     @content;
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  //border-radius: 4px;
+  background-color: $borderColor2;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: transparent;
+}
+
+a {
+  color:$fontColor3;
+  text-decoration: none;
 }
 
 html,body {
@@ -44,6 +69,26 @@ html,body {
     border-style: solid;
     padding-bottom: 0.3rem;
     box-sizing: border-box;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      background-image: url('../img/corner.png');
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -0px;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      transform: scaleX(-1);
+      background-image: url('../img/corner.png');
+    }
   }
   .headerBoxMenu {
     width: 50%;
@@ -78,6 +123,24 @@ html,body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    position: relative;
+  }
+  .cardBoxTitleLine {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    width: 19vw;
+    height: 2px;
+    background-color: $borderColor1;
+    /*&::after {
+      content: '';
+      position: absolute;
+      bottom: -0px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      background-image: url('../img/corner.png');
+    }*/
   }
   .cardBoxTitleText {
     font-size: 3rem;
@@ -95,7 +158,7 @@ html,body {
   border-style: solid;
   border-width: 1px;
   border-color: $borderColor1;
-  border-radius: 20px;
+  border-radius: 16px;
   color:$fontColor3;
   padding: 4px 2rem;
   display: flex;
@@ -154,6 +217,7 @@ html,body {
     border-width: 0 0 1px 0;
     border-color: $borderColor1;
     color:$fontColor3;
+    position: relative;
   }
   .articleBoxTime {
     font-size: 0.9rem;
@@ -200,6 +264,9 @@ html,body {
   .articlePageContent {
     color:$fontColor3;
     font-size: 1.2rem;
+    img {
+      max-width: 80%;
+    }
   }
 }
 
@@ -335,7 +402,7 @@ html,body {
     transform: rotate(0deg);
   }
   .classtypeBarMenu {
-    padding-left: 1.2rem;
+    padding: 0.2rem 0 0.2rem 1.2rem;
     border-width: 0 0 0 1px;
     border-style: dashed;
     border-color: $borderColor1;

@@ -14,7 +14,7 @@
                 </div>
               </div>
             </div>
-            <div class="articlePageContent" v-html="data.article.content" />
+            <div class="articlePageContent ql-editor" v-html="data.article.content" />
           </div>
           <CardBox title="Comment">
             <template v-slot:menu>

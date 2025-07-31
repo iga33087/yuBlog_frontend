@@ -1,6 +1,7 @@
 <template>
   <div class="cardBox">
     <div class="cardBoxTitle">
+      <div class="cardBoxTitleLine"></div>
       <div class="cardBoxTitleText">{{title}}</div>
       <div class="cardBoxTitleMenu">
         <slot name="menu" />

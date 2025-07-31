@@ -1,7 +1,11 @@
 <template>
   <div class="classtypeBar">
     <div class="classtypeBarTitle" @click="show=!show">
-      <div class="classtypeBarTitleText">{{data.title}} <span v-if="showTotal">({{data.children&&data.children.length ? data.children.length : 0}})</span></div>
+      <div class="classtypeBarTitleText">
+        <span v-if="showTotal">{{data.title}}</span>
+        <NuxtLink :to="'/article/'+data._id" v-else><span>{{data.title}}</span></NuxtLink>
+        <span v-if="showTotal">({{data.children&&data.children.length ? data.children.length : 0}})</span>
+      </div>
       <i class="classtypeBarTitleMenu" :class="{'icon-cheveron-up':showTotal,'classtypeBarTitleMenuOn':show}" />
     </div>
     <div class="classtypeBarMenu" v-if="data.children&&data.children.length&&show">
