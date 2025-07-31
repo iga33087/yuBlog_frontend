@@ -126,7 +126,6 @@ html,body {
 
 .articleBox {
   width: 100%;
-  margin-bottom: 2rem;
   .articleBoxInner {
     width: 100%;
   }
@@ -303,6 +302,16 @@ html,body {
   .borderBoxContent {
 
   }
+}
+
+.borderBox2 {
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-image:
+    url("../img/border2.png")
+        22 /                    /* slice */
+        22px 22px 22px 22px;
 }
 
 .classtypeBar {
