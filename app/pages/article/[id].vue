@@ -7,9 +7,14 @@
             <div class="articlePageTitle">
               <h1 class="articlePageTitleText">{{data.article.title}}</h1>
               <div class="articlePageTitleInfo">
-                <TagBox>{{data.classtype.title}}</TagBox>
+                <div class="articlePageTitleInfoClass">
+                  <TagBox>{{data.classtype.title}}</TagBox>
+                  <Divider />
+                  <TagBox class="tagBox2 me-3" v-for="(item) in data.tag" :key="item">{{item}}</TagBox>
+                </div>
                 <div class="articlePageTitleInfoList">
                   <div class="articlePageTitleInfoListItem">Author：{{data.member.name}}</div>
+                  <Divider />
                   <div class="articlePageTitleInfoListItem">Date：{{global.timeFormat(data.article.date,'YYYY/MM/DD HH:mm')}}</div>
                 </div>
               </div>

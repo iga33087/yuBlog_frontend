@@ -6,7 +6,8 @@ $fontColor1:#FFF;
 $fontColor2:#6b7a7a;
 $fontColor3:#364646;
 $borderColor1:#364646;
-$borderColor2:#3646465d;
+$borderColor2:#6b7a7a;
+$scrollbar:#3646465d;
 
 $xs: 575.98px;
 $sm: 767px;
@@ -31,7 +32,7 @@ $xl: 1920px;
 
 ::-webkit-scrollbar-thumb {
   //border-radius: 4px;
-  background-color: $borderColor2;
+  background-color: $scrollbar;
   border-radius: 20px;
 }
 
@@ -52,6 +53,13 @@ html,body {
   background-size: 100vw 100vh;
   background-attachment: fixed;
   font-family: "Exo 2","Noto Serif TC";
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: $borderColor2;
+  margin: 0 1rem;
 }
 
 .header {
@@ -166,6 +174,11 @@ html,body {
   cursor: pointer;
 }
 
+.tagBox2 {
+  padding: 2px 1rem;
+  font-size: 0.8rem;
+}
+
 .articleBar {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -259,13 +272,16 @@ html,body {
     justify-content: space-between;
     margin-bottom: 2rem;
   }
+  .articlePageTitleInfoClass {
+    display: flex;
+    align-items: center;
+  }
   .articlePageTitleInfoList {
     display: flex;
     align-items: center;
     color:$fontColor2;
   }
   .articlePageTitleInfoListItem {
-    margin-left: 2rem;
   }
   .articlePageContent {
     color:$fontColor3;
