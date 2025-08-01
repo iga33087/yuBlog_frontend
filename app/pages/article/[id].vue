@@ -22,6 +22,8 @@
             </template>
             <template v-slot:content>
               <CommentBox v-for="(item) in data.comment.data" :data="item" :key="item._id" />
+              <div class="articlePageBoxNoComments" v-if="!data.comment.data.length">No Comments</div>
+              <AddCommentBox :articleID="route.params.id" />
             </template>
           </CardBox>
         </div>
@@ -58,6 +60,7 @@
 </template>
 
 <script setup>
+const { $store } = useNuxtApp()
 import global from '~/assets/js/global.js'
 const route = useRoute()
 
@@ -77,5 +80,6 @@ useSeoMeta({
 })
 
 console.log(111,data)
+console.log(222,$store)
 
 </script>

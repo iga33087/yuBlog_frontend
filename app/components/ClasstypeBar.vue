@@ -4,7 +4,7 @@
       <div class="classtypeBarTitleText">
         <span v-if="showTotal">{{data.title}}</span>
         <NuxtLink :to="'/article/'+data._id" v-else><span>{{data.title}}</span></NuxtLink>
-        <span v-if="showTotal">({{data.children&&data.children.length ? data.children.length : 0}})</span>
+        <span v-if="showTotal"> ({{data.children&&data.children.length ? data.children.length : 0}})</span>
       </div>
       <i class="classtypeBarTitleMenu" :class="{'icon-cheveron-up':showTotal,'classtypeBarTitleMenuOn':show}" />
     </div>

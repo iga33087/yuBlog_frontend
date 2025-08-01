@@ -235,6 +235,12 @@ html,body {
   .articlePageBox {
     min-height: calc(100vh - 60px - 2rem);
   }
+  .articlePageBoxNoComments {
+    font-size: 1.6rem;
+    text-align: center;
+    color:$fontColor2;
+    margin-bottom: 1rem;
+  }
   .articlePageTitle {
     color:$fontColor3;
   }
@@ -413,6 +419,83 @@ html,body {
 .classtypeBox {
   position: sticky;
   top: 20px;
+}
+
+.addCommentBox {
+  .addCommentBoxContent {
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    border:1px solid $borderColor1;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .addCommentBoxMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.loginBox {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.1);
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 98;
+  .loginBoxInner {
+    width: 380px;
+    padding: 1rem;
+    background-color: $color1;
+    border: 1px solid $borderColor1;
+    position: relative;
+    z-index: 99;
+  }
+  .loginBoxInnerTitle {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    color:$fontColor3;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: $borderColor1;
+  }
+  .loginBoxInnerContent {
+    margin-bottom: 1rem;
+  }
+  .loginBoxInnerContentItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+  }
+  .loginBoxInnerContentItemTitle {
+    width: 120px;
+    padding: 4px 1rem;
+    box-sizing: border-box;
+    background-color: $color2;
+    color:$fontColor1;
+  }
+  .loginBoxInnerContentItemInput {
+    width: calc(100% - 120px);
+    padding: 4px 1rem;
+    border-width: 0px;
+  }
+  .loginBoxInnerMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .footer {
