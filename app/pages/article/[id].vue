@@ -8,7 +8,10 @@
               <h1 class="articlePageTitleText">{{data.article.title}}</h1>
               <div class="articlePageTitleInfo">
                 <div class="articlePageTitleInfoClass">
-                  <TagBox>{{data.classtype.title}}</TagBox>
+                  <div class="d-flex align-items-center">
+                    <i class="fs-4 icon-folder-outline me-2" />
+                    {{data.classtype.title}}
+                  </div>
                   <Divider />
                   <TagBox class="tagBox2 me-3" v-for="(item) in data.tag" :key="item">{{item}}</TagBox>
                 </div>
@@ -83,8 +86,5 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 })
-
-console.log(111,data)
-console.log(222,$store)
 
 </script>

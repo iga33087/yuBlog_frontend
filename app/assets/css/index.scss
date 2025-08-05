@@ -404,6 +404,15 @@ html,body {
         22px 22px 22px 22px;
 }
 
+.borderBox3 {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-image:
+    url("../img/border3.png")
+        4 /                    /* slice */
+        4px 4px 4px 4px;
+}
+
 .classtypeBar {
   color:$fontColor3;
   margin-bottom: 0.5rem;
