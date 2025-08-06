@@ -7,3 +7,9 @@
     <Footer />
   </div>
 </template>
+
+<script setup>
+const { $store } = useNuxtApp()
+
+await $store.getInit()
+</script>

@@ -179,6 +179,13 @@ html,body {
   font-size: 0.8rem;
 }
 
+.article {
+  .articleSearch {
+    position: sticky;
+    top: 20px;
+  }
+}
+
 .articleBar {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -289,6 +296,51 @@ html,body {
     img {
       max-width: 80%;
     }
+  }
+}
+
+.articleItem {
+  .articleItemBox {
+    display: flex;
+  }
+  .articleItemBoxImg {
+    width: 300px;
+    height: 200px;
+    border: 1px solid $borderColor1;
+    border-radius: 6px;
+    margin-right: 2rem;
+  }
+  .articleItemBoxContent {
+    width: calc(100% - 300px - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .articleItemBoxContentTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .articleItemBoxContentContent {
+    
+  }
+  .articleItemBoxContentInfo {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: $borderColor2;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .articleItemBoxContentInfoList {
+
+  }
+  .articleItemBoxContentInfoListItem {
+
+  }
+  .articleItemBoxContentInfoTime {
+
   }
 }
 
