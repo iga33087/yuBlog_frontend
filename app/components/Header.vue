@@ -5,9 +5,9 @@
     </ClientOnly>
     <div class="headerBox">
       <div class="headerBoxMenu">
-        <div class="headerBoxMenuItem">文章一覽</div>
+        <NuxtLink class="headerBoxMenuItem" to="/article">文章一覽</NuxtLink>
         <div class="headerBoxMenuItem">文章類別</div>
-        <div class="headerBoxMenuLogo">愉之家</div>
+        <NuxtLink class="headerBoxMenuLogo" to="/">愉之家</NuxtLink>
         <div class="headerBoxMenuItem">友站連結</div>
         <div class="headerBoxMenuItem" @click="$store.showLogin=true">{{$store?.userData?.data.name||'登入'}}</div>
       </div>

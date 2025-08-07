@@ -5,8 +5,7 @@
         <div class="col-9">
           <CardBox title="Articles">
             <template v-slot:content>
-              <!--<ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />-->
-              {{data}}
+              <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
             </template>
           </CardBox>
         </div>
@@ -29,5 +28,7 @@
 
 <script setup>
 const { $store } = useNuxtApp()
+const { data } = useFetch('/api/articles/outline')
+
 console.log(55,$store.classtypes,$store.classtypeObj)
 </script>

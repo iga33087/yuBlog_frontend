@@ -321,7 +321,7 @@ html,body {
     margin-bottom: 1rem;
   }
   .articleItemBoxContentContent {
-    
+    font-size: 1.2rem;
   }
   .articleItemBoxContentInfo {
     border-width: 1px 0 0 0;
@@ -334,13 +334,21 @@ html,body {
     justify-content: space-between;
   }
   .articleItemBoxContentInfoList {
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
   .articleItemBoxContentInfoListItem {
-
+    display: flex;
+    align-items: center;
   }
   .articleItemBoxContentInfoTime {
 
+  }
+  .articleItemBoxContentInfoClasstype {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
   }
 }
 
