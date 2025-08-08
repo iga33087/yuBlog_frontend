@@ -2,24 +2,15 @@
   <div class="article">
     <div class="container-fluid">
       <div class="row">
+        <div class="col-3 pe-5">
+          <SearchBox />
+        </div>
         <div class="col-9">
           <CardBox title="Articles">
             <template v-slot:content>
               <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
             </template>
           </CardBox>
-        </div>
-        <div class="col-3">
-          <BorderBox class="articleSearch">
-            <template v-slot:title>
-              <div>搜索文章</div>
-            </template>
-            <template v-slot:content>
-              <div class="p-3">
-                11
-              </div>
-            </template>
-          </BorderBox>
         </div>
       </div>
     </div>
@@ -28,7 +19,5 @@
 
 <script setup>
 const { $store } = useNuxtApp()
-const { data } = useFetch('/api/articles/outline')
-
-console.log(55,$store.classtypes,$store.classtypeObj)
+const { data } = await useFetch('/api/articles/outline')
 </script>

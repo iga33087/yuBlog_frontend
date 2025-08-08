@@ -171,6 +171,8 @@ html,body {
   padding: 4px 2rem;
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
+  transform-origin: 0.2s;
   cursor: pointer;
 }
 
@@ -179,11 +181,31 @@ html,body {
   font-size: 0.8rem;
 }
 
-.article {
-  .articleSearch {
-    position: sticky;
-    top: 20px;
+.tagBoxOnc {
+  background-color: $borderColor1;
+  color:$fontColor1;
+}
+
+.buttonBox {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $borderColor1;
+  color:$fontColor3;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: $borderColor1;
+    color:$fontColor1;
   }
+}
+
+.searchBox {
+  position: sticky;
+  top: 20px;
 }
 
 .articleBar {
@@ -293,6 +315,7 @@ html,body {
   .articlePageContent {
     color:$fontColor3;
     font-size: 1.2rem;
+    margin-bottom: 2rem;
     img {
       max-width: 80%;
     }
@@ -302,6 +325,7 @@ html,body {
 .articleItem {
   .articleItemBox {
     display: flex;
+    color:$fontColor3;
   }
   .articleItemBoxImg {
     width: 300px;
@@ -317,8 +341,13 @@ html,body {
     justify-content: space-between;
   }
   .articleItemBoxContentTitle {
-    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
+  }
+  .articleItemBoxContentTitleText {
+    font-size: 1.6rem;
   }
   .articleItemBoxContentContent {
     font-size: 1.2rem;
@@ -580,6 +609,31 @@ html,body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.inputBox {
+  margin-bottom: 1.2rem;
+  .inputBoxTitle {
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:$fontColor3;
+    border-width: 0 0 1px 0;
+    border-color: $borderColor2;
+    border-style: solid;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .inputBoxContent {
+    input,select {
+      width: 100%;
+      background-color: transparent;
+      border:1px solid $borderColor1;
+      border-radius: 6px;
+      padding: 4px;
+      color:$fontColor3;
+    }
   }
 }
 
