@@ -14,7 +14,7 @@
           <div class="articleItemBoxContentInfoClasstype"><i class="fs-4 icon-folder-outline me-2" />{{$store.classtypeObj[data.classtype_id].title}}</div>
           <div class="d-flex align-items-center">
             <div class="articleItemBoxContentInfoList">
-              <TagBox class="tagBox2 me-3" v-for="(item) in data.tag_id" :key="item">{{$store.tagObj[item].title}}</TagBox>
+              <TagBox class="tagBox2 mb-0 me-3" v-for="(item) in data.tag_id" :key="item">{{$store.tagObj[item].title}}</TagBox>
             </div>
             <div class="articleItemBoxContentInfoTime">{{global.timeFormat(data.date,'YYYY/MM/DD')}}</div>
           </div>

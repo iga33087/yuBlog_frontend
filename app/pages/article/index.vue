@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
+const route = useRoute()
 const { $store } = useNuxtApp()
-const { data } = await useFetch('/api/articles/outline')
+const { data } = await useFetch('/api/articles/outline',{query:route.query})
 </script>

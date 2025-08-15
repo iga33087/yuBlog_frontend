@@ -10,7 +10,7 @@
         </InputBox>
         <InputBox title="文章類別">
           <select v-model="formData.classtype">
-            <option :value="null">不限</option>
+            <option value="">不限</option>
             <option v-for="(item) in $store.classtypes.data" :key="item._id" :value="item._id">{{item.title}}</option>
           </select>
         </InputBox>
@@ -34,8 +34,8 @@ const route = useRoute()
 const { $store } = useNuxtApp()
 
 const formData=ref({
-  keyword: route.query.keyword ? route.query.keyword : null,
-  classtype: route.query.classtype ? route.query.classtype : null,
+  keyword: route.query.keyword ? route.query.keyword : '',
+  classtype: route.query.classtype ? route.query.classtype : '',
   tag: route.query.tag ? route.query.tag.split(',') : []
 })
 
@@ -51,8 +51,8 @@ function search() {
 
 function clear() {
   formData.value={
-    keyword: null,
-    classtype: null,
+    keyword: '',
+    classtype: '',
     tag: []
   }
 }
