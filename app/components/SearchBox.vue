@@ -20,7 +20,7 @@
           </div>
         </InputBox>
         <div class="d-flex align-items-center">
-          <ButtonBox style="width:50%;">清空</ButtonBox>
+          <ButtonBox style="width:50%;" @click="clear">清空</ButtonBox>
           <ButtonBox style="width:50%;" @click="search">搜尋</ButtonBox>
         </div>
       </div>
