@@ -7,7 +7,7 @@
       <div class="p-3">
         <textarea type="text" class="addCommentBoxContent" v-model="formData.content" />
         <div class="addCommentBoxMenu">
-          <TagBox class="me-3">清空</TagBox>
+          <TagBox class="me-3" @click="clear">清空</TagBox>
           <TagBox @click="sub">發表</TagBox>
         </div>
       </div>
@@ -39,5 +39,9 @@ async function sub() {
   catch(err) {
     alert('評論發表失敗')
   }
+}
+
+function clear() {
+  formData.value.content=null
 }
 </script>

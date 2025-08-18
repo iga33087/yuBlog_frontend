@@ -6,15 +6,15 @@
         <div>
           <div class="articleItemBoxContentTitle">
             <div class="articleItemBoxContentTitleText">{{data.title}}</div>
-            <NuxtLink :to="'/article/'+data._id"><TagBox >CHECK</TagBox></NuxtLink>
+            <TagBox :url="'/article/'+data._id">CHECK</TagBox>
           </div>
           <div class="articleItemBoxContentContent" v-text="data.content" />
         </div>
         <div class="articleItemBoxContentInfo">
-          <div class="articleItemBoxContentInfoClasstype"><i class="fs-4 icon-folder-outline me-2" />{{$store.classtypeObj[data.classtype_id].title}}</div>
+          <ClasstypeLabel :id="data.classtype_id" />
           <div class="d-flex align-items-center">
             <div class="articleItemBoxContentInfoList">
-              <TagBox class="tagBox2 mb-0 me-3" v-for="(item) in data.tag_id" :key="item">{{$store.tagObj[item].title}}</TagBox>
+              <TagLabel :id="item" v-for="(item) in data.tag_id" :key="item">{{item}}</TagLabel>
             </div>
             <div class="articleItemBoxContentInfoTime">{{global.timeFormat(data.date,'YYYY/MM/DD')}}</div>
           </div>

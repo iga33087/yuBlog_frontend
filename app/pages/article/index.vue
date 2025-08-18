@@ -8,7 +8,13 @@
         <div class="col-9">
           <CardBox title="Articles">
             <template v-slot:content>
-              <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
+              <div v-if="data.data.length">
+                <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
+                <PageBox :now="route.query.page||1" :limit="10" :total="data.total" />
+              </div>
+              <div class="noData" v-else>
+                No Data
+              </div>
             </template>
           </CardBox>
         </div>

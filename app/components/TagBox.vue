@@ -1,10 +1,10 @@
 <template>
-  <div class="tagBox">
+  <a class="tagBox" :href="props.url">
     <slot />
-  </div>
+  </a>
 </template>
 
 <script setup>
-const props = defineProps(['title'])
+const props = defineProps(['title','url'])
 
 </script>

@@ -8,12 +8,9 @@
               <h1 class="articlePageTitleText">{{data.article.title}}</h1>
               <div class="articlePageTitleInfo">
                 <div class="articlePageTitleInfoClass">
-                  <div class="d-flex align-items-center">
-                    <i class="fs-4 icon-folder-outline me-2" />
-                    {{data.classtype.title}}
-                  </div>
+                  <ClasstypeLabel :id="data.classtype._id" />
                   <Divider />
-                  <TagBox class="tagBox2 me-3" v-for="(item) in data.tag" :key="item">{{item}}</TagBox>
+                  <TagLabel :id="item" v-for="(item) in data.article.tag_id" :key="item">{{item}}</TagLabel>
                 </div>
                 <div class="articlePageTitleInfoList">
                   <div class="articlePageTitleInfoListItem">Author：{{data.member.name}}</div>
@@ -30,8 +27,10 @@
             </template>
             <template v-slot:content>
               <CommentBox v-for="(item) in data.comment.data" :data="item" :key="item._id" />
-              <div class="articlePageBoxNoComments" v-if="!data.comment.data.length">No Comments</div>
-              <AddCommentBox :articleID="route.params.id" />
+              <div class="noData" v-if="!data.comment.data.length">No Comments</div>
+              <ClientOnly>
+                <AddCommentBox :articleID="route.params.id" />
+              </ClientOnly>
             </template>
           </CardBox>
         </div>
@@ -42,21 +41,12 @@
         <div class="col-12">
           <CardBox title="Articles">
             <template v-slot:menu>
-              <TagBox><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
+              <TagBox url="/article"><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-3 px-4">
-                  <ArticleBox />
-                </div>
-                <div class="col-3 px-4">
-                  <ArticleBox />
-                </div>
-                <div class="col-3 px-4">
-                  <ArticleBox />
-                </div>
-                <div class="col-3 px-4">
-                  <ArticleBox />
+                <div class="col-3 px-4" v-for="(item,index) in artcleList.data" :key="index">
+                  <ArticleBox :data="item" />
                 </div>
               </div>
             </template>
@@ -68,7 +58,6 @@
 </template>
 
 <script setup>
-const { $store } = useNuxtApp()
 import global from '~/assets/js/global.js'
 const route = useRoute()
 
@@ -77,6 +66,10 @@ const { data } = await useFetch('/api/articles/data',{
     id: route.params.id
   }
 })
+
+console.log(1111,data)
+
+const { data:artcleList } = await useFetch('/api/articles/outline',{query:{page:1,limit:4}})
 
 useSeoMeta({
   title: data.value.article.title,

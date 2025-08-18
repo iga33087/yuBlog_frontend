@@ -2,6 +2,7 @@
 
 $color1:#A7BCBE;
 $color2:#617272;
+$color3:rgba(255,255,255,0.4);
 $fontColor1:#FFF;
 $fontColor2:#6b7a7a;
 $fontColor3:#364646;
@@ -171,9 +172,11 @@ html,body {
   padding: 4px 2rem;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
-  transform-origin: 0.2s;
+  transition-duration: 0.2s;
   cursor: pointer;
+  &:hover {
+    background-color: $color3;
+  }
 }
 
 .tagBox2 {
@@ -182,7 +185,7 @@ html,body {
 }
 
 .tagBoxOnc {
-  background-color: $borderColor1;
+  background-color: $borderColor1 !important;
   color:$fontColor1;
 }
 
@@ -273,15 +276,16 @@ html,body {
   }
 }
 
+.noData {
+  font-size: 1.6rem;
+  text-align: center;
+  color:$fontColor2;
+  margin-bottom: 1rem;
+}
+
 .articlePage {
   .articlePageBox {
     min-height: calc(100vh - 60px - 2rem);
-  }
-  .articlePageBoxNoComments {
-    font-size: 1.6rem;
-    text-align: center;
-    color:$fontColor2;
-    margin-bottom: 1rem;
   }
   .articlePageTitle {
     color:$fontColor3;
@@ -373,11 +377,6 @@ html,body {
   }
   .articleItemBoxContentInfoTime {
 
-  }
-  .articleItemBoxContentInfoClasstype {
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
   }
 }
 
@@ -634,6 +633,76 @@ html,body {
       padding: 4px;
       color:$fontColor3;
     }
+  }
+}
+
+.pageBox {
+  margin-bottom: 2rem;
+  .pageBoxInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pageBoxInnerList {
+    display: flex;
+    align-items: center;
+  }
+  .pageBoxInnerListItem {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid $borderColor1;
+    color:$fontColor3;
+    margin-right: 1rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background-color: $borderColor1;
+      color:$fontColor1;
+    }
+  }
+  .pageBoxInnerListItemOnc {
+    background-color: $borderColor1;
+    color:$fontColor1;
+  }
+  .pageBoxInnerInfo {
+    display: flex;
+    align-items: center;
+  }
+  .pageBoxInnerInfoTotal {
+    text-align: center;
+    color:$fontColor2;
+  }
+}
+
+.classtypeLabel {
+  display: flex;
+  align-items: center;
+  .classtypeLabelIcon {
+
+  }
+  .classtypeLabelTitle {
+    font-size: 1.2rem;
+  }
+}
+
+.tagLabel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $borderColor1;
+  border-radius: 16px;
+  color:$fontColor3;
+  padding: 2px 1rem;
+  margin-right: 0.8rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background-color: $color3;
   }
 }
 

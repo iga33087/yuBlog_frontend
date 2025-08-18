@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6p81as');
-  src:  url('fonts/icomoon.eot?6p81as#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6p81as') format('truetype'),
-    url('fonts/icomoon.woff?6p81as') format('woff'),
-    url('fonts/icomoon.svg?6p81as#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tsv7nh');
+  src:  url('fonts/icomoon.eot?tsv7nh#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tsv7nh') format('truetype'),
+    url('fonts/icomoon.woff?tsv7nh') format('woff'),
+    url('fonts/icomoon.svg?tsv7nh#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -49,8 +49,20 @@
 .icon-x-twitter-brands-solid-full:before {
   content: "\e907";
 }
+.icon-cheveron-left:before {
+  content: "\e90a";
+}
+.icon-cheveron-right:before {
+  content: "\e90b";
+}
 .icon-cheveron-up:before {
   content: "\e908";
+}
+.icon-step-backward:before {
+  content: "\e90c";
+}
+.icon-step-forward:before {
+  content: "\e90d";
 }
 .icon-pencil:before {
   content: "\e905";

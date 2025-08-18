@@ -16,11 +16,11 @@
         </InputBox>
         <InputBox title="文章標籤">
           <div class="d-flex align-items-center flex-wrap">
-            <TagBox class="tagBox2 me-2" :class="{'tagBoxOnc':formData.tag.includes(item._id)}" v-for="(item) in $store.tags.data" :key="item._id" @click="addTag(item._id)">{{item.title}}</TagBox>
+            <TagBox class="tagBox2 me-2 mb-2" :class="{'tagBoxOnc':formData.tag.includes(item._id)}" v-for="(item) in $store.tags.data" :key="item._id" @click="addTag(item._id)">{{item.title}}</TagBox>
           </div>
         </InputBox>
         <div class="d-flex align-items-center">
-          <ButtonBox style="width:50%;" @click="clear">清空</ButtonBox>
+          <ButtonBox class="me-3" style="width:50%;" @click="clear">清空</ButtonBox>
           <ButtonBox style="width:50%;" @click="search">搜尋</ButtonBox>
         </div>
       </div>
@@ -56,6 +56,4 @@ function clear() {
     tag: []
   }
 }
-
-console.log(777,route.query)
 </script>
