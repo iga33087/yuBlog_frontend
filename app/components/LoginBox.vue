@@ -14,7 +14,7 @@
       </div>
       <div class="loginBoxInnerMenu">
         <TagBox class="me-3">清空</TagBox>
-        <TagBox class="me-3">註冊</TagBox>
+        <TagBox class="me-3" @click="googleLogin">Google</TagBox>
         <TagBox @click="login">登入</TagBox>
       </div>
     </div>
@@ -35,6 +35,17 @@ async function login() {
     localStorage.token=token
     $store.userData=await $fetch('/api/auth/verify', {method: 'POST',headers:{authorization:localStorage.token}})
     $store.showLogin=false
+  }
+  catch(err) {
+    console.log(err)
+  }
+}
+
+async function googleLogin() {
+  try {
+    let url=await $fetch('/api/google/login', {method: 'POST'})
+    localStorage.token=''
+    location.href=url
   }
   catch(err) {
     console.log(err)

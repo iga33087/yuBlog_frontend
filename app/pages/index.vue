@@ -21,7 +21,9 @@
             </template>
             <template v-slot:content>
               <div class="row">
-
+                <div class="col-3 px-4" v-for="(item,index) in artcleList.data" :key="index">
+                  <ArticleBox :data="item" />
+                </div>
               </div>
             </template>
           </CardBox> 
@@ -30,3 +32,7 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const { data:artcleList } = await useFetch('/api/articles/outline',{query:{page:1,limit:4}})
+</script>

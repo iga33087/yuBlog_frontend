@@ -67,8 +67,6 @@ const { data } = await useFetch('/api/articles/data',{
   }
 })
 
-console.log(1111,data)
-
 const { data:artcleList } = await useFetch('/api/articles/outline',{query:{page:1,limit:4}})
 
 useSeoMeta({
