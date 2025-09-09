@@ -1,11 +1,15 @@
 <template>
   <BorderBox2 class="articleItem">
     <div class="articleItemBox">
-      <img class="articleItemBoxImg" :src="data.coverImg" />
+      <a :href="'/article/'+data._id">
+        <div class="articleItemBoxImg">
+          <img class="articleItemBoxImgPic" :src="data.coverImg" />
+        </div>
+      </a>
       <div class="articleItemBoxContent">
         <div>
           <div class="articleItemBoxContentTitle">
-            <div class="articleItemBoxContentTitleText">{{data.title}}</div>
+            <a :href="'/article/'+data._id"><div class="articleItemBoxContentTitleText">{{data.title}}</div></a>
             <TagBox :url="'/article/'+data._id">CHECK</TagBox>
           </div>
           <div class="articleItemBoxContentContent" v-text="data.content" />

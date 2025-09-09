@@ -10,7 +10,7 @@
             <template v-slot:content>
               <div v-if="data.data.length">
                 <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
-                <PageBox :now="route.query.page||1" :limit="1" :total="data.total" @change="changePage" />
+                <PageBox :now="route.query.page||1" :limit="20" :total="data.total" @change="changePage" />
               </div>
               <div class="noData" v-else>
                 No Data
@@ -26,7 +26,7 @@
 <script setup>
 const route = useRoute()
 const { $store } = useNuxtApp()
-const { data } = await useFetch('/api/articles/outline',{query:{...route.query,limit:1}})
+const { data } = await useFetch('/api/articles/outline',{query:{...route.query,limit:20}})
 
 async function changePage(x) {
   await navigateTo({
