@@ -26,8 +26,9 @@
               <TagBox><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
             <template v-slot:content>
-              <CommentBox v-for="(item) in data.comment.data" :data="item" :key="item._id" />
-              <div class="noData" v-if="!data.comment.data.length">No Comments</div>
+              <CommentBox v-for="(item) in commentList" :data="item" :key="item._id" />
+              <div class="noData" v-if="!commentList.length">No Comments</div>
+              <PageBox :now="commentKey" :limit="commentLimit" :total="data.comment.total" @change="(e)=>commentKey=e" />
               <ClientOnly>
                 <AddCommentBox :articleID="route.params.id" />
               </ClientOnly>
@@ -58,6 +59,7 @@
 </template>
 
 <script setup>
+import { ref,computed } from 'vue' 
 import global from '~/assets/js/global.js'
 const route = useRoute()
 
@@ -68,6 +70,12 @@ const { data } = await useFetch('/api/articles/data',{
 })
 
 const { data:artcleList } = await useFetch('/api/articles/outline',{query:{page:1,limit:4}})
+
+const commentKey=ref(1)
+const commentLimit=ref(5)
+const commentList=computed(()=> {
+  return data.value.comment.data.slice((commentKey.value-1)*commentLimit.value,((commentKey.value-1)*commentLimit.value)+commentLimit.value)
+})
 
 useSeoMeta({
   title: data.value.article.title,

@@ -473,6 +473,10 @@ html,body {
     border-radius: 100%;
     margin-left: 0.8rem;
     cursor: pointer;
+    transition-duration: 0.2s;
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 }
 
