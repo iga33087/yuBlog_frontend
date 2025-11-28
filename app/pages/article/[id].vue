@@ -2,7 +2,7 @@
   <div class="articlePage">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-9 pe-5">
+        <div class="articlePageInner col-xl-9">
           <div class="articlePageBox">
             <div class="articlePageTitle">
               <h1 class="articlePageTitleText">{{data.article.title}}</h1>
@@ -13,6 +13,8 @@
                   <TagLabel :id="item" v-for="(item) in data.article.tag_id" :key="item">{{item}}</TagLabel>
                 </div>
                 <div class="articlePageTitleInfoList">
+                  <div class="articlePageTitleInfoListItem">Viewed：{{data.article.viewed}}</div>
+                  <Divider />
                   <div class="articlePageTitleInfoListItem">Author：{{data.member.name}}</div>
                   <Divider />
                   <div class="articlePageTitleInfoListItem">Date：{{global.timeFormat(data.article.date,'YYYY/MM/DD HH:mm')}}</div>
@@ -35,18 +37,18 @@
             </template>
           </CardBox>
         </div>
-        <div class="col-3">
+        <div class="col-xl-3">
           <AuthorBox :data="data.member" />
           <ClasstypeBox />
         </div>
-        <div class="col-12">
+        <div class="col-xl-12">
           <CardBox title="Articles">
             <template v-slot:menu>
               <TagBox url="/article"><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-3 px-4" v-for="(item,index) in artcleList.data" :key="index">
+                <div class="col-xxl-3 col-xl-4 col-md-6 px-4" v-for="(item,index) in artcleList.data" :key="index">
                   <ArticleBox :data="item" />
                 </div>
               </div>

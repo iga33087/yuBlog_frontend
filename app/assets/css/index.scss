@@ -13,8 +13,8 @@ $scrollbar:#3646465d;
 $xs: 575.98px;
 $sm: 767px;
 $md: 992px;
-$lg: 1400px;
-$xl: 1920px;
+$lg: 1000px;
+$xl: 1200px;
 
 @mixin rwd($breakpoint) {
   @media (max-width: $breakpoint) {
@@ -151,10 +151,16 @@ html,body {
       height: 22px;
       background-image: url('../img/corner.png');
     }*/
+    @include rwd($xl) {
+      bottom: 10px;
+    }
   }
   .cardBoxTitleText {
     font-size: 3rem;
     font-family: "Limelight";
+    @include rwd($xl) {
+      font-size: 2rem;
+    }
   }
   .cardBoxTitleMenu {
 
@@ -291,6 +297,12 @@ html,body {
 }
 
 .articlePage {
+  .articlePageInner {
+    padding-right: 3rem;
+    @include rwd($xl) {
+      padding-right: calc(1.5rem * .5);
+    }
+  }
   .articlePageBox {
     min-height: calc(100vh - 60px - 2rem);
   }
@@ -301,7 +313,7 @@ html,body {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     border-style: solid;
     border-width: 0 0 1px 0;
     border-color: $borderColor1;
@@ -311,6 +323,10 @@ html,body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+    @include rwd($xl) {
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
   }
   .articlePageTitleInfoClass {
     display: flex;
@@ -320,6 +336,9 @@ html,body {
     display: flex;
     align-items: center;
     color:$fontColor2;
+    @include rwd($xl) {
+      flex-wrap: wrap;
+    }
   }
   .articlePageTitleInfoListItem {
   }

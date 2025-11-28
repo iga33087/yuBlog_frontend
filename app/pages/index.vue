@@ -15,7 +15,7 @@
           </CardBox>
         </div>
         <div class="col-12">
-          <CardBox title="Articles">
+          <CardBox title="Recommend">
             <template v-slot:menu>
               <TagBox url="/article"><div class="me-2">MORE</div> <i class="icon-arrow-right" /></TagBox>
             </template>
