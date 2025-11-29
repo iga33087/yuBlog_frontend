@@ -10,7 +10,7 @@
             <template v-slot:content>
               <div v-if="data.data.length">
                 <ArticleItem v-for="(item) in data.data" :key="item._id" :data="item" />
-                <PageBox :now="route.query.page||1" :limit="20" :total="data.total" @change="changePage" />
+                <PageBox :now="formData.page" :limit="formData.limit" :total="data.total" @change="changePage" />
               </div>
               <div class="noData" v-else>
                 No Data
@@ -24,15 +24,19 @@
 </template>
 
 <script setup>
+import {ref,computed} from 'vue'
 const route = useRoute()
 const { $store } = useNuxtApp()
-const { data } = await useFetch('/api/articles/outline',{query:{...route.query,limit:20}})
+const formData=ref({
+  page:route.query.page||1,
+  limit:route.query.limit||1
+})
+const formDataKey=computed(()=> `key-${formData.value.page}-${formData.value.limit}`)
+
+const { data } = await useAsyncData(formDataKey,()=> $fetch('/api/articles/outline', {query:{...route.query,page:formData.value.page,limit:formData.value.limit}}))
 
 async function changePage(x) {
-  await navigateTo({
-    path: '/article',
-    query: {...route.query,page:x}
-  })
-  location.reload()
+  formData.value.page=x
+  await navigateTo({path:'/article',query:{...route.query,page:formData.value.page,limit:formData.value.limit}})
 }
 </script>
