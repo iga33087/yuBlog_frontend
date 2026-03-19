@@ -2,10 +2,10 @@
   <div class="article">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3 pe-5">
+        <div class="col-xl-3 col-lg-4 col-md-5 pe-xl-5 pe-lg-4 pe-md-3 pe-sm-0">
           <SearchBox />
         </div>
-        <div class="col-9">
+        <div class="col-xl-9 col-lg-8 col-md-7">
           <CardBox title="Articles">
             <template v-slot:content>
               <div v-if="data.data.length">

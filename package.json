@@ -12,6 +12,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.11.2",
     "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
     "dayjs": "^1.11.13",
     "nuxt": "^4.0.1",
     "pinia": "^3.0.3",

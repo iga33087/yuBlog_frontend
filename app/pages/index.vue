@@ -21,7 +21,7 @@
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-3 px-4" v-for="(item,index) in artcleList.data" :key="index">
+                <div class="col-xl-3 col-lg-4 col-sm-6 col-xs-12 px-4" v-for="(item,index) in artcleList.data" :key="index">
                   <ArticleBox :data="item" />
                 </div>
               </div>

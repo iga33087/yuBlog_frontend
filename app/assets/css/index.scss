@@ -8,6 +8,7 @@ $fontColor2:#6b7a7a;
 $fontColor3:#364646;
 $borderColor1:#364646;
 $borderColor2:#6b7a7a;
+$borderColor3:#36464634;
 $scrollbar:#3646465d;
 
 $xs: 575.98px;
@@ -107,16 +108,78 @@ html,body {
     align-items: flex-end;
     justify-content: space-between;
     color:$fontColor3;
+    @include rwd($md) {
+      width: 100%;
+      justify-content: center;
+    }
   }
   .headerBoxMenuItem {
     font-size: 1.2rem;
     text-align: center;
     cursor: pointer;
+    @include rwd($md) {
+      display: none;
+    }
   }
   .headerBoxMenuLogo {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
+  }
+  .headerMobileBoxShow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background-color: #36464669;
+    z-index: 4;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    @include rwd($md) {
+      display: block;
+    }
+  }
+  .headerMobileBox {
+    display: none;
+  }
+  .headerMobileBoxOpen {
+    display: block;
+  }
+  .headerMobileBoxBlack {
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+  }
+  .headerMobileBoxMenu {
+    position: fixed;
+    top:0;
+    width: 200px;
+    height: 100vh;
+    background-color: $color1;
+    z-index: 3;
+    background-image: url('../img/bg.png');
+    background-size: 100vw 100vh;
+    padding: 0 1rem;
+    animation-name:openMobileAm;
+    animation-duration:0.4s;
+    animation-fill-mode: forwards; 
+  }
+  .headerMobileBoxMenuItem {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    border-width: 0 0 1px 0;
+    border-color: $borderColor3;
+    border-style: solid;
   }
 }
 
@@ -161,6 +224,9 @@ html,body {
     @include rwd($xl) {
       font-size: 2rem;
     }
+    @include rwd($md) {
+      font-size: 1.6rem;
+    }
   }
   .cardBoxTitleMenu {
 
@@ -181,8 +247,34 @@ html,body {
   align-items: center;
   transition-duration: 0.2s;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
   &:hover {
-    background-color: $color3;
+    .tagBoxBg {
+      width: 100%;
+    }
+    .tagBoxContent {
+      color:#fff;
+    }
+  }
+  @include rwd($sm) {
+    padding: 0px 1rem;
+  }
+  .tagBoxBg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background-color: #364646;
+    transition-duration: 0.4s;
+  }
+  .tagBoxContent {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.2s;
   }
 }
 
@@ -228,6 +320,20 @@ html,body {
   .articleBarBox {
     display: flex;
     align-items: center;
+    @include rwd($sm) {
+      display: block;
+    }
+  }
+  .articleBarBoxInfo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    @include rwd($sm) {
+      margin-bottom: 0.6rem;
+    }
+  }
+  .articleBarBoxInfoTag {
+    margin-right: 1rem;
   }
   .articleBarBoxTime {
     font-size: 1rem;
@@ -236,6 +342,9 @@ html,body {
   .articleBarBoxTitle {
     font-size: 1.2rem;
     font-weight: bold;
+    @include rwd($sm) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -331,6 +440,27 @@ html,body {
   .articlePageTitleInfoClass {
     display: flex;
     align-items: center;
+    @include rwd($xl) {
+      width: 100%;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none; 
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .articlePageTitleInfoClassLeft {
+    display: flex;
+    align-items: center;
+    word-break: keep-all;
+  }
+  .articlePageTitleInfoClassTagBox {
+    display: flex;
+    align-items: center;
+    @include rwd($xl) {
+      flex-grow: 1;
+    }
   }
   .articlePageTitleInfoList {
     display: flex;
@@ -361,6 +491,11 @@ html,body {
   .articleItemBox {
     display: flex;
     color:$fontColor3;
+    a {
+      @include rwd($md) {
+        width: 100%;
+      }
+    }
   }
   .articleItemBoxImg {
     width: 300px;
@@ -369,6 +504,9 @@ html,body {
     border-radius: 6px;
     margin-right: 2rem;
     overflow: hidden;
+    @include rwd($md) {
+      width: 100%;
+    }
   }
   .articleItemBoxImgPic {
     width: 100%;
@@ -380,6 +518,9 @@ html,body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include rwd($md) {
+      display: none;
+    }
   }
   .articleItemBoxContentTitle {
     display: flex;
@@ -655,7 +796,9 @@ html,body {
 .inputBox {
   margin-bottom: 1.2rem;
   .inputBoxTitle {
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 1.2rem;
     font-weight: bold;
     color:$fontColor3;
@@ -664,6 +807,7 @@ html,body {
     border-style: solid;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
+    cursor: pointer;
   }
   .inputBoxContent {
     input,select {
@@ -754,4 +898,13 @@ html,body {
   align-items: center;
   justify-content: center;
   color:$fontColor1;
+}
+
+@keyframes openMobileAm{
+    from{
+        right:-200px;
+    }
+    to{
+        right:0px;
+    }
 }

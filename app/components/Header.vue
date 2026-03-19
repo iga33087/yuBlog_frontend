@@ -3,6 +3,14 @@
     <ClientOnly>
       <LoginBox v-if="$store.showLogin" />
     </ClientOnly>
+    <div class="headerMobileBoxShow" @click="showMobileMenu=!showMobileMenu"><i class="bi" :class="showMobileMenu ? 'bi-x-lg':'bi-justify'"></i></div>
+    <div class="headerMobileBox" :class="{'headerMobileBoxOpen':showMobileMenu}">
+      <div class="headerMobileBoxBlack" @click="showMobileMenu=!showMobileMenu"></div>
+      <div class="headerMobileBoxMenu">
+        <a class="headerMobileBoxMenuItem" href="/article">文章一覽</a>
+        <div class="headerMobileBoxMenuItem">登入</div>
+      </div>
+    </div>
     <div class="headerBox">
       <div class="headerBoxMenu">
         <a class="headerBoxMenuItem" href="/article">文章一覽</a>
@@ -14,8 +22,11 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 const route = useRoute()
 const { $store } = useNuxtApp()
+
+const showMobileMenu=ref(false)
 
 async function checkToken() {
   try {

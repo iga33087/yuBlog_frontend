@@ -8,9 +8,13 @@
               <h1 class="articlePageTitleText">{{data.article.title}}</h1>
               <div class="articlePageTitleInfo">
                 <div class="articlePageTitleInfoClass">
-                  <ClasstypeLabel :id="data.classtype._id" />
-                  <Divider />
-                  <TagLabel :id="item" v-for="(item) in data.article.tag_id" :key="item">{{item}}</TagLabel>
+                  <div class="articlePageTitleInfoClassLeft">
+                    <ClasstypeLabel :id="data.classtype._id" />
+                    <Divider />
+                  </div>
+                  <div class="articlePageTitleInfoClassTagBox">
+                    <TagLabel :id="item" v-for="(item) in data.article.tag_id" :key="item">{{item}}</TagLabel>
+                  </div>
                 </div>
                 <div class="articlePageTitleInfoList">
                   <div class="articlePageTitleInfoListItem">Viewed：{{data.article.viewed}}</div>
@@ -48,7 +52,7 @@
             </template>
             <template v-slot:content>
               <div class="row">
-                <div class="col-xxl-3 col-xl-4 col-md-6 px-4" v-for="(item,index) in artcleList.data" :key="index">
+                <div class="col-xl-3 col-lg-4 col-sm-6 col-xs-12 px-4" v-for="(item,index) in artcleList.data" :key="index">
                   <ArticleBox :data="item" />
                 </div>
               </div>

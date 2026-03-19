@@ -1,6 +1,9 @@
 <template>
   <a class="tagBox" :href="props.url">
-    <slot />
+    <div class="tagBoxBg"></div>
+    <div class="tagBoxContent">
+      <slot />
+    </div>
   </a>
 </template>
 
