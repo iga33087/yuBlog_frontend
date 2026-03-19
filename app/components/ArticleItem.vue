@@ -10,12 +10,12 @@
         <div>
           <div class="articleItemBoxContentTitle">
             <a :href="'/article/'+data._id"><div class="articleItemBoxContentTitleText">{{data.title}}</div></a>
-            <TagBox :url="'/article/'+data._id">CHECK</TagBox>
+            <TagBox :url="'/article/'+data._id" class="articleItemBoxContentTitleTag" >CHECK</TagBox>
           </div>
           <div class="articleItemBoxContentContent" v-text="data.content" />
         </div>
         <div class="articleItemBoxContentInfo">
-          <ClasstypeLabel :id="data.classtype_id" />
+          <ClasstypeLabel class="me-2" :id="data.classtype_id" />
           <div class="d-flex align-items-center">
             <div class="articleItemBoxContentInfoList">
               <TagLabel :id="item" v-for="(item) in data.tag_id" :key="item">{{item}}</TagLabel>

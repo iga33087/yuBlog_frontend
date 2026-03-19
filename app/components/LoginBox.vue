@@ -13,8 +13,8 @@
         </div>
       </div>
       <div class="loginBoxInnerMenu">
-        <TagBox class="me-3">清空</TagBox>
-        <TagBox class="me-3" @click="googleLogin">Google</TagBox>
+        <TagBox class="me-1">清空</TagBox>
+        <TagBox class="me-1" @click="googleLogin">Google</TagBox>
         <TagBox @click="login">登入</TagBox>
       </div>
     </div>
