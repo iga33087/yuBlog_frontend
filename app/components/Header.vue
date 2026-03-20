@@ -8,7 +8,7 @@
       <div class="headerMobileBoxBlack" @click="showMobileMenu=!showMobileMenu"></div>
       <div class="headerMobileBoxMenu">
         <a class="headerMobileBoxMenuItem" href="/article">文章一覽</a>
-        <div class="headerMobileBoxMenuItem">登入</div>
+        <div class="headerMobileBoxMenuItem" @click="$store.showLogin=true">{{$store?.userData?.data?.name||$store?.userData?.google?.name||'登入'}}</div>
       </div>
     </div>
     <div class="headerBox">
