@@ -8,6 +8,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   routeRules: {
-    '/api/**': { proxy: 'http://localhost:3009/**' }
+    '/api/**': { proxy: 'http://backend:3009/**' }  //http://localhost:3009/**
   }
 })
