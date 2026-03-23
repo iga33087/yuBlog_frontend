@@ -29,7 +29,7 @@ const route = useRoute()
 const { $store } = useNuxtApp()
 const formData=ref({
   page:route.query.page||1,
-  limit:route.query.limit||1
+  limit:route.query.limit||5
 })
 const formDataKey=computed(()=> `key-${formData.value.page}-${formData.value.limit}`)
 
