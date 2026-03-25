@@ -5,7 +5,7 @@
         <TagBox class="articleBarBoxInfoTag"><ClasstypeLabel :id="data.classtype_id" /></TagBox>
         <div class="articleBarBoxTime">{{global.timeFormat(data.date,'YYYY/MM/DD')}}</div>
       </div>
-      <div class="articleBarBoxTitle">{{data.title}}</div>
+      <a :href="'/article/'+data._id" class="articleBarBoxTitle">{{data.title}}</a>
     </div>
   </div>
 </template>
