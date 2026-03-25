@@ -2,7 +2,7 @@
   <div class="inputBox">
     <div class="inputBoxTitle" @click="show=!show">
       <div class="inputBoxTitleText">{{title}}</div>
-      <i class="bi bi-chevron-down"></i>
+      <i class="classtypeBarTitleMenu icon-cheveron-up" :class="{'classtypeBarTitleMenuOn':show}" />
     </div>
     <div class="inputBoxContent" v-if="show">
       <slot />

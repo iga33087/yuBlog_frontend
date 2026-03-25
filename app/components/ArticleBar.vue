@@ -1,12 +1,12 @@
 <template>
   <div class="articleBar">
-    <div class="articleBarBox">
+    <a :href="'/article/'+data._id" class="articleBarBox">
       <div class="articleBarBoxInfo">
-        <TagBox class="articleBarBoxInfoTag"><ClasstypeLabel class="articleBarBoxInfoTag" :id="data.classtype_id" /></TagBox>
+        <TagBox class="articleBarBoxInfoTag"><ClasstypeLabel :id="data.classtype_id" /></TagBox>
         <div class="articleBarBoxTime">{{global.timeFormat(data.date,'YYYY/MM/DD')}}</div>
       </div>
-      <div class="articleBarBoxTitle">{{data.content}}</div>
-    </div>
+      <div class="articleBarBoxTitle">{{data.title}}</div>
+    </a>
   </div>
 </template>
 

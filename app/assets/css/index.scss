@@ -159,12 +159,11 @@ html,body {
     background-color: #36464669;
     z-index: 4;
     font-size: 1.6rem;
-    display: flex;
     align-items: center;
     justify-content: center;
     display: none;
     @include rwd($md) {
-      display: block;
+      display: flex;
     }
   }
   .headerMobileBox {
@@ -345,6 +344,14 @@ html,body {
   border-width: 0 0 1px 0;
   border-color: $borderColor1;
   color:$fontColor3;
+  &:hover {
+    .articleBarBoxTitle {
+      transform: scale(1.2);
+      @include rwd($sm) {
+        transform: scale(1);
+      }
+    }
+  }
   .articleBarBox {
     display: flex;
     align-items: center;
@@ -363,12 +370,19 @@ html,body {
   .articleBarBoxInfoTag {
     margin-right: 1rem;
     transition-duration: 0.2s;
+    a {
+      transition-duration: 0.2s;
+    }
+    &:hover a {
+      color:#fff !important;
+    }
   }
   .articleBarBoxTime {
     font-size: 1rem;
     color:$fontColor2;
   }
   .articleBarBoxTitle {
+    transition-duration: 0.2s;
     font-size: 1.2rem;
     font-weight: bold;
     @include rwd($sm) {
@@ -730,13 +744,6 @@ html,body {
   .classtypeBarTitleText {
     font-size: 1.2rem;
   }
-  .classtypeBarTitleMenu {
-    transform: rotate(180deg);
-    transition-duration: 0.2s;
-  }
-  .classtypeBarTitleMenuOn {
-    transform: rotate(0deg);
-  }
   .classtypeBarMenu {
     padding: 0.2rem 0 0.2rem 1.2rem;
     border-width: 0 0 0 1px;
@@ -744,6 +751,14 @@ html,body {
     border-color: $borderColor1;
   }
 
+}
+
+.classtypeBarTitleMenu {
+  transform: rotate(180deg);
+  transition-duration: 0.2s;
+}
+.classtypeBarTitleMenuOn {
+  transform: rotate(0deg);
 }
 
 .classtypeBox {
