@@ -8,16 +8,20 @@
       <div class="headerMobileBoxBlack" @click="showMobileMenu=!showMobileMenu"></div>
       <div class="headerMobileBoxMenu">
         <a class="headerMobileBoxMenuItem" href="/article">文章一覽</a>
-        <div class="headerMobileBoxMenuItem" @click="logout" v-if="$store?.userData?.data?.name||$store?.userData?.google?.name">{{$store?.userData?.data?.name||$store?.userData?.google?.name}}</div>
-        <div class="headerMobileBoxMenuItem" @click="$store.showLogin=true" v-else>登入</div>
+        <ClientOnly>
+          <div class="headerMobileBoxMenuItem" @click="logout" v-if="$store?.userData?.data?.name||$store?.userData?.google?.name">{{$store?.userData?.data?.name||$store?.userData?.google?.name}}</div>
+          <div class="headerMobileBoxMenuItem" @click="$store.showLogin=true" v-else>登入</div>
+        </ClientOnly>
       </div>
     </div>
     <div class="headerBox">
       <div class="headerBoxMenu">
         <a class="headerBoxMenuItem" href="/article">文章一覽</a>
         <a class="headerBoxMenuLogo" href="/">愉之家</a>
-        <div class="headerBoxMenuItem" @click="logout" v-if="$store?.userData?.data?.name||$store?.userData?.google?.name">{{$store?.userData?.data?.name||$store?.userData?.google?.name}}</div>
-        <div class="headerBoxMenuItem" @click="$store.showLogin=true" v-else>登入</div>
+        <ClientOnly>
+          <div class="headerBoxMenuItem" @click="logout" v-if="$store?.userData?.data?.name||$store?.userData?.google?.name">{{$store?.userData?.data?.name||$store?.userData?.google?.name}}</div>
+          <div class="headerBoxMenuItem" @click="$store.showLogin=true" v-else>登入</div>
+        </ClientOnly>
       </div>
     </div>
   </div>

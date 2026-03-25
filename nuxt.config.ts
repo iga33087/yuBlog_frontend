@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title:'愉之家'
+    }
+  },
   devServer: {
     host: '0.0.0.0'
   },
@@ -8,6 +13,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   routeRules: {
-    '/api/**': { proxy: 'http://backend:3009/**' }  //http://localhost:3009/**
+    '/api/**': { proxy: 'http://localhost:3009/**' }  //http://localhost:3009/**
   }
 })
